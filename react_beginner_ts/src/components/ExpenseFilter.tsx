@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { Categories } from "../App";
 
 interface ExpenseFilterProps {
   onSelectCategory: (category: string) => void;
@@ -11,11 +12,9 @@ const ExpenseFilter: FC<ExpenseFilterProps> = ({ onSelectCategory }) => {
       className="form-select"
     >
       <option value="">All Categories</option>
-      <option value="Grocerries">Grocerries</option>
-      <option value="Utilities">Utilities</option>
-      <option value="Entertainment">Entertainment</option>
-      <option value="Bills">Bills</option>
-      <option value="Food">Food</option>
+      {Categories.map((cate) => (
+        <option key={cate} value={cate}>{cate}</option>
+      ))}
     </select>
   );
 };
