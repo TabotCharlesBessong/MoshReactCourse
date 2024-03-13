@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Categories } from "../App";
+import { Categories } from "../constant/data";
 
 interface ExpenseFilterProps {
   onSelectCategory: (category: string) => void;

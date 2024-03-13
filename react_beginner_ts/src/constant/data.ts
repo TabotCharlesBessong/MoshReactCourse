@@ -60,3 +60,12 @@ export const expenses = [
     category: "Food",
   },
 ];
+
+
+export const Categories = [
+  "Grocerries",
+  "Utilities",
+  "Entertainment",
+  "Food",
+  "Bills",
+] as const;
