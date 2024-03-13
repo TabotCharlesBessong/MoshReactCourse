@@ -21,7 +21,7 @@ export const expenses = [
     id: 4,
     description: "Gasoline",
     amount: 40,
-    category: "Transportation",
+    category: "Grocerries",
   },
   {
     id: 5,
@@ -33,13 +33,13 @@ export const expenses = [
     id: 6,
     description: "Gym Membership",
     amount: 30,
-    category: "Health",
+    category: "Entertainment",
   },
   {
     id: 7,
     description: "Books",
     amount: 20,
-    category: "Education",
+    category: "Utilities",
   },
   {
     id: 8,
@@ -51,7 +51,7 @@ export const expenses = [
     id: 9,
     description: "Clothing",
     amount: 70,
-    category: "Shopping",
+    category: "Utilities",
   },
   {
     id: 10,
