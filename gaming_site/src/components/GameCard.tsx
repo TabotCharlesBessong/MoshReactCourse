@@ -10,7 +10,13 @@ interface GameCardProps {
 
 const GameCard: FC<GameCardProps> = ({ game }) => {
   return (
-    <Card>
+    <Card
+      sx={{ justifySelf: "center" }}
+      width="300px"
+      overflow="hidden"
+      padding={10}
+      borderRadius={10}
+    >
       <Image src={getCroppedImageUrl(game.background_image)} />
       <CardBody>
         <Heading fontSize="2xl">{game.name}</Heading>
