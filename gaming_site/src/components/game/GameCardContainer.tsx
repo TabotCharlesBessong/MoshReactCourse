@@ -9,7 +9,7 @@ const GameCardContainer:FC<GameCardContainerProps> = ({children}) => {
   return (
     <Box
       sx={{ justifySelf: "center" }}
-      width="320px"
+      width="400px"
       overflow="hidden"
       padding={10}
       borderRadius={10}
