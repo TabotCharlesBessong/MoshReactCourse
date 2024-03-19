@@ -7,4 +7,5 @@ export { default as CriticScore } from "./common/CriticScore";
 export { default as GameCardSkeleton } from "./game/GameCardSkeleton";
 export { default as GameCardContainer } from "./game/GameCardContainer";
 export { default as GenreList } from "./common/GenreList";
-export {default as PlatformSelector} from "./platforms/PlatformSelector"
+export { default as PlatformSelector } from "./platforms/PlatformSelector";
+export { default as SortSelector } from "./common/SortSelector";
