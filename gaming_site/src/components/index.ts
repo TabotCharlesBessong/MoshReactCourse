@@ -8,5 +8,6 @@ export { default as GameCard } from "./game/GameCard";
 export { default as GameCardContainer } from "./game/GameCardContainer";
 export { default as GameCardSkeleton } from "./game/GameCardSkeleton";
 export { default as GameGrid } from "./game/GameGrid";
+export { default as GameHeading } from "./game/GameHeading";
 export { default as PlatformIconList } from "./platforms/PlatformIconList";
 export { default as PlatformSelector } from "./platforms/PlatformSelector";
