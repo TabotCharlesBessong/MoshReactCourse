@@ -22,6 +22,7 @@ const SearchInput: FC<SearchInputProps> = ({ onSearch }) => {
           borderRadius={20}
           placeholder="Search games...."
           variant="filled"
+          ref={ref}
         />
       </InputGroup>
     </form>
