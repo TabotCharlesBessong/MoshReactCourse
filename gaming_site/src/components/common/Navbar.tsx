@@ -9,7 +9,7 @@ interface NavBarProps {
 
 const NavBar:FC<NavBarProps> = ({onSearch}) => {
   return (
-    <HStack padding="10px">
+    <HStack justifyContent="space-evenly" padding="10px">
       <Image src={logo} boxSize="60px" />
       <SearchInput onSearch={onSearch} />
       <ColorModeSwitcher />
