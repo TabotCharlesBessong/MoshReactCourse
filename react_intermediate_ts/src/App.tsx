@@ -1,7 +1,10 @@
+import { TodoList } from "./components"
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <TodoList />
+    </div>
   )
 }
 
