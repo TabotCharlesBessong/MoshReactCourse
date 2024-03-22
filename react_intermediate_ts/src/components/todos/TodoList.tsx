@@ -5,7 +5,7 @@ const TodoList = () => {
   if (isLoading) return <p>Loading....</p>;
   if (error) return <p>{error.message}</p>;
   return (
-    <ul className="list-group">
+    <ul className="list-group mb-4">
       {todos?.slice(0,10)?.map((todo) => (
         <li key={todo.id} className="list-group-item mt-2">
           {todo.title}
