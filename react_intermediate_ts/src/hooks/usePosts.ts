@@ -1,14 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import { Todo } from "../types";
 import { CACHE_KEY_TODOS } from "../constants/variables";
-import todoService from "../services/todoService";
+import postService from "../services/postService";
 
-const useTodos = () => {
+const usePosts = () => {
   return useQuery<Todo[], Error>({
     queryKey: CACHE_KEY_TODOS,
-    queryFn: todoService.getAll,
-    staleTime: 10 * 1000,
+    queryFn: postService.getAll,
+    staleTime: 10 * 100,
   });
 };
 
-export default useTodos;
+export default usePosts;
