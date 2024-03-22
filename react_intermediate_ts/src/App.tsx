@@ -1,8 +1,9 @@
-import { TodoList } from "./components"
+import { TodoForm, TodoList } from "./components"
 
 const App = () => {
   return (
-    <div>
+    <div className="container m-4" >
+      <TodoForm />
       <TodoList />
     </div>
   )
