@@ -1,7 +1,12 @@
+import { PostList, TodoForm, TodoList } from "./components"
 
 const App = () => {
   return (
-    <div>App</div>
+    <div className="container m-4" >
+      <TodoForm />
+      <TodoList />
+      <PostList />
+    </div>
   )
 }
 
