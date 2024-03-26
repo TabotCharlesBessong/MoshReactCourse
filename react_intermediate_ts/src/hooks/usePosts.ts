@@ -1,14 +1,34 @@
-import { useQuery } from "@tanstack/react-query";
-import { Todo } from "../types";
-import { CACHE_KEY_TODOS } from "../constants/variables";
-import postService from "../services/postService";
+import { useInfiniteQuery } from "@tanstack/react-query";
+import axios from "axios";
 
-const usePosts = () => {
-  return useQuery<Todo[], Error>({
-    queryKey: CACHE_KEY_TODOS,
-    queryFn: postService.getAll,
-    staleTime: 10 * 100,
+interface Post {
+  id: number;
+  title: string;
+  body: string;
+  userId: number;
+}
+
+interface PostQuery {
+  pageSize: number;
+}
+
+const usePosts = (query: PostQuery) =>
+  useInfiniteQuery<Post[], Error>({
+    queryKey: ["posts", query],
+    queryFn: ({ pageParam = 1 }) =>
+      axios
+        .get("https://jsonplaceholder.typicode.com/posts", {
+          params: {
+            _start: (pageParam - 1) * query.pageSize,
+            _limit: query.pageSize,
+          },
+        })
+        .then((res) => res.data),
+    staleTime: 1 * 60 * 1000, //1m
+    keepPreviousData: true,
+    getNextPageParam: (lastPage, allPages) => {
+      return lastPage.length > 0 ? allPages.length + 1 : undefined;
+    },
   });
-};
 
 export default usePosts;

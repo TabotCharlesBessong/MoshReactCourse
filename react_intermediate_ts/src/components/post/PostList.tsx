@@ -1,17 +1,36 @@
+import { Fragment } from "react";
 import usePosts from "../../hooks/usePosts";
 
 const PostList = () => {
-  const { data: posts, error, isLoading } = usePosts();
-  if (isLoading) return <p>Loading....</p>;
+  const pageSize = 10;
+  const { data, error, isLoading, fetchNextPage, isFetchingNextPage } =
+    usePosts({ pageSize });
+
+  if (isLoading) return <p>Loading...</p>;
+
   if (error) return <p>{error.message}</p>;
+
   return (
-    <ul className="list-group mt-8">
-      {posts?.slice(0, 10)?.map((post) => (
-        <li key={post.id} className="list-group-item mt-2">
-          {post.title}
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul className="list-group">
+        {data?.pages?.map((page, index) => (
+          <Fragment key={index}>
+            {page?.map((post:any) => (
+              <li key={post.id} className="list-group-item">
+                {post.title}
+              </li>
+            ))}
+          </Fragment>
+        ))}
+      </ul>
+      <button
+        className="btn btn-primary my-3 ms-1"
+        disabled={isFetchingNextPage}
+        onClick={() => fetchNextPage()}
+      >
+        {isFetchingNextPage ? "Loading..." : "Load More"}
+      </button>
+    </>
   );
 };
 
